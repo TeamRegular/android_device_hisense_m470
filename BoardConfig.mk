@@ -37,7 +37,8 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_LIB_DUMPSTATE := libdumpstate.m470
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/hisense/m470/prebuilt/kernel/kernel
+TARGET_KERNEL_SOURCE := kernel/hisense/m470
+TARGET_KERNEL_CONFIG := cyanogenmod_m470_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/hisense/m470/bluetooth

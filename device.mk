@@ -14,25 +14,6 @@
 # limitations under the License.
 #
 
-# Kernel
-
-LOCAL_KERNEL := device/hisense/m470/prebuilt/kernel/kernel
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_KERNEL):kernel
-
-# Kernel modules REMEMBER TO REMOVE IF EVER WE GET KERNEL SOURCE
-PRODUCT_COPY_FILES += \
-    device/hisense/m470/prebuilt/kernel/modules/baseband_usb_chr.ko:system/lib/modules/baseband_usb_chr.ko \
-    device/hisense/m470/prebuilt/kernel/modules/bcmdhd.ko:system/lib/modules/bcmdhd.ko \
-    device/hisense/m470/prebuilt/kernel/modules/cfg80211.ko:system/lib/modules/cfg80211.ko \
-    device/hisense/m470/prebuilt/kernel/modules/gps_drv.ko:system/lib/modules/gps_drv.ko \
-    device/hisense/m470/prebuilt/kernel/modules/lib80211.ko:system/lib/modules/lib80211.ko \
-    device/hisense/m470/prebuilt/kernel/modules/mac80211.ko:system/lib/modules/mac80211.ko \
-    device/hisense/m470/prebuilt/kernel/modules/raw_ip_net.ko:system/lib/modules/raw_ip_net.ko \
-    device/hisense/m470/prebuilt/kernel/modules/scsi_wait_scan.ko:system/lib/modules/scsi_wait_scan.ko \
-    device/hisense/m470/prebuilt/kernel/modules/tcrypt.ko:system/lib/modules/tcrypt.ko
-
 PRODUCT_AAPT_CONFIG := normal large tvdpi hdpi
 PRODUCT_AAPT_PREF_CONFIG := tvdpi
 
@@ -96,9 +77,7 @@ PRODUCT_PACKAGES += \
 
 
 # Include Proprietary files
-include vendor/hisense/m470/device-vendor.mk
-
-#$(call inherit-product-if-exists, vendor/hisense/m470/device-vendor.mk)
+$(call inherit-product-if-exists, vendor/hisense/m470/device-vendor.mk)
 
 # NFC packages
 PRODUCT_PACKAGES += \

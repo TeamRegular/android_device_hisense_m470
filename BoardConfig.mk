@@ -37,8 +37,12 @@ BOARD_FLASH_BLOCK_SIZE := 4096
 BOARD_LIB_DUMPSTATE := libdumpstate.m470
 
 # Kernel
-TARGET_KERNEL_SOURCE := kernel/hisense/m470
-TARGET_KERNEL_CONFIG := cyanogenmod_m470_defconfig
+BOARD_KERNEL_CMDLINE  := no_console_suspend=1 console=null androidboot.selinux=permissive
+BOARD_KERNEL_BASE     := 0x10000000
+BOARD_MKBOOTIMG_ARGS  := --ramdisk_offset 0x11000000
+BOARD_KERNEL_PAGESIZE := 2048
+TARGET_KERNEL_SOURCE  := kernel/hisense/m470
+TARGET_KERNEL_CONFIG  := cyanogenmod_m470_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR ?= device/hisense/m470/bluetooth
@@ -85,6 +89,7 @@ BOARD_RECOVERY_SWIPE := true
 
 BOARD_HARDWARE_CLASS := device/hisense/m470/cmhw/
 
+# TWRP
 DEVICE_RESOLUTION := 800x1280
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_SDCARD_ON_DATA := true
